@@ -1,0 +1,141 @@
+(1)The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+
+title, which is a String representing the title of the movie
+studio, which is a String representing the studio that made the movie
+rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+
+
+
+  class movie {
+    constructor(title, studio, rating = "PG") {
+        this.title = title
+        this.studio = studio
+        this.rating = rating
+
+    }
+    static getpg(movies) {
+        let array = [];
+        for (let i = 0; i < movies.length; i++) {
+            if (movies[i].rating === "PG") {
+                array.push(movies[i])
+                
+            }
+        }
+        return array;
+
+    }
+}
+const casino = new movie("casino royale", "eon production", "PG13")
+
+
+const moviesarray = [
+    new movie("name1", "studio1" ),
+    new movie("name2", "studio2", "PG"),
+    new movie("name3", "studio3", "PG12"),
+    new movie("name4", "studio4" ),
+    new movie("name5", "studio5", "PG23"),
+    new movie("name6", "studio6", "R")
+]
+
+
+const pgmoviesarray = movie.getpg(moviesarray)
+console.log(`Title: ${casino.title}`)
+console.log(`Studio: ${casino.studio}`)
+console.log(`Rating: ${casino.rating}`)
+console.log()
+console.log("movies with rating 'pg': ")
+for (let i = 0; i < pgmoviesarray.length; i++) {
+    console.log(`Title: ${pgmoviesarray[i].title},studio: ${pgmoviesarray[i].studio},rating: ${pgmoviesarray[i].rating}`)
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+(2)Convert the UML diagram to Typescript class. - use number for double
+
+  class circle {
+    constructor(r, c) {
+        this.radius = r
+        this.color = c
+    }
+    circle1(){
+        console.log(`(radius: ${this.radius})`)
+    }
+    
+    circle2(){
+        console.log(`(radius: ${this.radius}, color: ${this.color})`)
+    }
+    String(){
+        let arr=[]
+        let r=toString(this.radius)
+        arr.push(`radius: ${this.radius}`, `color: ${this.color}`)
+        console.log(arr)
+    }
+    getradius() {
+        console.log(`${this.radius}`)
+    }
+    setradius() {
+        this.radius = 10
+        console.log(`${this.radius}`)
+    }
+    getcolor() {
+        console.log(`${this.color}`)
+    }
+    setcolor() {
+        this.color = "blue"
+        console.log(`${this.color}`)
+    }
+    getarea() {
+        let a = (22 / 7) * (`${this.radius}` ** 2)
+        console.log(a.toFixed(2))
+
+    }
+    getcircumfrence() {
+        let c = 2 * (22 / 7) * (`${this.radius}`)
+        console.log(c.toFixed(2))
+    }
+}
+let data = new circle(1.0, "red")
+data.circle1()
+data.circle2()
+data.String()
+data.getradius()
+data.setradius()
+data.getcolor()
+data.setcolor()
+data.getarea()
+data.getcircumfrence()
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(3)Write a “person” class to hold all the details.
+
+class Person{
+    constructor(n,a,e,m){
+        this.name=n
+        this.age=a
+        this.email=e
+        this.mobilenumber=m
+    }
+    f(){
+        console.log(`I am ${this.name}, My email is "${this.email}" `)
+    }
+}
+const details=new Person("MOUNIKA",24,"mounikaadada26@gmail.com",[7816066286,8500701189])
+console.log(details)
+details.f()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+(4)WRITE A CLASS TO CALUCLATE THE UBER PRICE
+function caluclatetheUberPrice(){
+    const basefare=2.50;
+    const costperkm=1.50;
+    const totalfare=basefare+costperkm*distance
+    return totalfare;
+
+}
+const distance=100;
+console.log(caluclatetheUberPrice(distance))
