@@ -56,7 +56,7 @@ for (let i = 0; i < pgmoviesarray.length; i++) {
     console.log(`Title: ${pgmoviesarray[i].title},studio: ${pgmoviesarray[i].studio},rating: ${pgmoviesarray[i].rating}`)
 }
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 (2)Convert the UML diagram to Typescript class. - use number for double
 
   class circle {
