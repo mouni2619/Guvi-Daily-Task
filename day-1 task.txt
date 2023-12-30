@@ -1,0 +1,81 @@
+(1)The Differences Between HTTP/1.1 and HTTP/2
+1)Basics:
+HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the World Wide Web. It defines how messages are formatted and transmitted, and how web servers and browsers should respond to different commands.
+HTTP/1.1:
+The older version, widely used since the late '90s.
+Sends and receives one request at a time, in a sequential manner.
+Requires multiple connections to load different resources, leading to potential latency issues.
+HTTP/2:
+The newer version, introduced to address limitations in HTTP/1.1.
+Allows for multiple concurrent requests and responses through a single connection.
+Designed to improve speed and efficiency in loading web pages.
+
+2)Multiplexing:
+HTTP/1.1:
+Each resource (image, stylesheet, script) requires a separate connection.
+Limited parallelism, leading to slower page loading times.
+Head-of-line blocking can occur, where a slow-loading resource delays the loading of subsequent resources.
+HTTP/2:
+Employs multiplexing, allowing multiple streams (requests and responses) to be sent concurrently over a single connection.
+Significantly reduces latency and improves the overall loading speed of a webpage.
+No head-of-line blocking, meaning faster and more efficient data transmission.
+
+3)Header Compression:
+HTTP/1.1:
+Headers (metadata about the request or response) are often redundant and not compressed.
+Each request carries a set of headers, leading to increased data overhead.
+HTTP/2:
+Utilizes header compression to reduce redundant information.
+Reduces the amount of data transmitted, resulting in faster page loading times.
+More efficient use of network resources.
+
+4)Prioritization:
+HTTP/1.1:
+All resources are treated equally in terms of priority.
+No explicit mechanism for indicating the importance of one resource over another.
+HTTP/2:
+Introduces stream prioritization, allowing developers to specify the importance of different resources.
+Enables the browser to prioritize critical resources, enhancing the user experience.
+
+Conclusion:
+In the ever-evolving landscape of the internet, protocols like HTTP play a crucial role in shaping our online experience. While HTTP/1.1 has been a reliable workhorse for many years, HTTP/2 brings welcome improvements in terms of speed, efficiency, and resource utilization. As we continue to embrace advancements in web technology, understanding these differences empowers both developers and users to make informed decisions for a faster and smoother online journey.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(2)Write a blog about objects and its internal representation in Javascript
+
+In JavaScript, objects are one of the fundamental data types, and they are used to represent and store collections of key-value pairs. 
+Objects can be created using object literals, the Object() constructor, or by instantiating custom constructor functions.
+The internal representation of objects in JavaScript involves several key concepts:
+
+1. Object Literal:
+eg:
+// Object created using an object literal
+var person = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "Example City",
+    country: "Example Country"
+  }
+};
+2. Object Properties:
+Objects consist of properties, where each property has a key (also called a "name" or "identifier") and a value. Properties can store data of 
+various types, including other objects or functions.
+eg:
+console.log(person.name); // Accessing property "name"
+console.log(person.address.city); // Accessing nested property "city"
+3. Object Methods:
+Functions can be assigned as values to object properties, creating methods.
+eg:
+var person = {
+  name: "John",
+  sayHello: function() {
+    console.log("Hello, " + this.name + "!");
+  }
+};
+person.sayHello(); // Calling the method
+4. Object Constructor:
+Objects can be created using the Object() constructor.
+eg:
+var person = new Object();
+person.name = "John";
+person.age = 30;
