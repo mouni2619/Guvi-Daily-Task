@@ -1,0 +1,398 @@
+(A)Print odd numbers in an array
+Sample Input:
+1 2 3 4 5 6 7
+Sample Output:
+1 3 5 7
+
+**ANONYMOUS FUNCTION**
+
+var odd = function (num) {
+    var arrayresult = [];
+    for (i=0; i<num.length; i++) {
+        if (num[i] % 2 != 0) {
+            arrayresult.push(num[i]);
+        }
+    }
+    console.log(arrayresult);
+}
+odd([1,2,3,4,5,6,7]);
+
+**IIFE**
+
+ function odd(num) {
+    var arrayresult = [];
+    for (i=0; i<num.length; i++) {
+        if (num[i] % 2 != 0) {
+            arrayresult.push(num[i]);
+        }
+    }
+    console.log(arrayresult);
+}
+odd([1,2,3,4,5,6,7]);
+
+**ARROW FUNCTION**
+
+var odd = (num)=> {
+    var arrayresult = [];
+    for (i=0; i<num.length; i++) {
+        if (num[i] % 2 != 0) {
+            arrayresult.push(num[i]);
+        }
+    }
+    console.log(arrayresult);
+}
+odd([1,2,3,4,5,6,7]);
+---------------------------------------------------------------------------------------------
+
+(B)Convert all the strings to title caps in a string array
+Sample Input:
+grab your vernacular imprint
+Sample Output:
+Grab Your Vernacular Imprint
+
+
+**ANONYMOUS FUNCTION**
+
+let titleCaps=function (arr) {
+	arr = arr.toLowerCase().split(' ');
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+	}
+	return arr.join(' ');
+}
+let result=titleCaps("grab your vernacular imprint")
+console.log(result);
+
+**IIFE**
+
+function titleCaps(arr) {
+	arr = arr.toLowerCase().split(' ');
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+	}
+	return arr.join(' ');
+}
+let result=titleCaps("grab your vernacular imprint")
+console.log(result);
+
+**ARROW FUNCTION**
+
+let titleCaps=(arr)=> {
+	arr = arr.toLowerCase().split(' ');
+	for (let i = 0; i < arr.length; i++) {
+		arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+	}
+	return arr.join(' ');
+}
+let result=titleCaps("grab your vernacular imprint")
+console.log(result);
+
+--------------------------------------------------------------------------------------------
+
+
+(C)Sum of all numbers in an array
+Sample Input:
+[1,2,3,4,5]
+Sample Output:
+15
+
+**ANONYMOUS FUNCTION**
+
+var sum=function(arr){
+    var result=0;
+    for(i=0;i<arr.length;i++){
+        result+=arr[i];
+    }
+    console.log(result);
+}
+sum([1,2,3,4,5]);
+
+**IIFE**
+
+function sum(arr){
+    var result=0;
+    for(i=0;i<arr.length;i++){
+        result+=arr[i];
+    }
+    console.log(result);
+}
+sum([1,2,3,4,5]);
+
+**ARROW FUNCTION**
+
+var sum=(arr)=>{
+    var result=0;
+    for(i=0;i<arr.length;i++){
+        result+=arr[i];
+    }
+    console.log(result);
+}
+sum([1,2,3,4,5]);
+
+--------------------------------------------------------------------------------------------------
+
+(D)Return all the prime numbers in an array
+Sample Input:
+[-1,-2,1,2,3,4,5,6,7]
+Sample Output:
+[ 2, 3, 5, 7 ]
+
+**ANONYMOUS FUNCTION**
+
+const result = (function(array) {
+    function primeNumber(number) {
+      if (number <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+      }
+      return true;
+    }
+  
+    return array.filter((number) => primeNumber(number));
+  })([-1,-2,1, 2, 3, 4, 5, 6, 7]);
+  
+  console.log(result);
+
+
+
+**IIFE**
+
+function r(array) {
+    function primeNumber(number) {
+      if (number <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+      }
+      return true;
+    }
+  
+    return array.filter((number) => primeNumber(number));
+  }
+  let result=r([-1,-2,1, 2, 3, 4, 5, 6, 7]);
+  
+  console.log(result);
+
+
+**ARROW FUNCTION**
+
+const r = (array)=> {
+    function primeNumber(number) {
+      if (number <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) return false;
+      }
+      return true;
+    }
+  
+    return array.filter((number) => primeNumber(number));
+  }
+  const result=r([-1,-2,1, 2, 3, 4, 5, 6, 7]);
+  
+  console.log(result);
+
+----------------------------------------------------------------------------------------------
+(E)Return all the palindromes in an array
+Sample Input:
+["mom","madam","sir","refer","pop","dad"]
+Sample Output:
+[ 'mom', 'madam', 'refer', 'pop', 'dad' ]
+
+**ANONYMOUS FUNCTION**
+
+let f=function (a){
+let arrresult=[];
+for(i=0;i<a.length;i++){
+ let result= a[i].split("").reverse().join("");
+if (a[i]==result){
+    arrresult.push(result);
+}
+}
+console.log(arrresult);
+}
+f(["mom","madam","sir","refer","pop","dad"]);
+
+**IIFE**
+
+function f(a){
+let arrresult=[];
+for(i=0;i<a.length;i++){
+ let result= a[i].split("").reverse().join("");
+if (a[i]==result){
+    arrresult.push(result);
+}
+}
+console.log(arrresult);
+}
+f(["mom","madam","sir","refer","pop","dad"]);
+
+**ARROW FUNCTION**
+
+let f=(a)=>{
+let arrresult=[];
+for(i=0;i<a.length;i++){
+ let result= a[i].split("").reverse().join("");
+if (a[i]==result){
+    arrresult.push(result);
+}
+}
+console.log(arrresult);
+}
+f(["mom","madam","sir","refer","pop","dad"]);
+
+----------------------------------------------------------------------------------------------
+
+(F)Return median of two sorted arrays of the same size
+
+Sample Input:
+let a = [11, 21, 71, 51];
+let b = [41, 61, 19, 81];
+Sample Output:
+46
+
+**ANONYMOUS FUNCTION**
+
+let result=function(arr1,arr2){
+let addArr = arr1.concat(arr2); 
+let sort=addArr.sort();
+let halfLength=sort.length/2;
+result=(sort[halfLength-1]+sort[halfLength])/2;
+console.log(result);
+}
+let a = [11, 21, 71, 51];
+let b = [41, 61, 19, 81];
+result(a,b);
+
+**IIFE**
+
+function result(arr1,arr2){
+let addArr = arr1.concat(arr2); 
+let sort=addArr.sort();
+let halfLength=sort.length/2;
+result=(sort[halfLength-1]+sort[halfLength])/2;
+console.log(result);
+}
+let a = [11, 21, 71, 51];
+let b = [41, 61, 19, 81];
+result(a,b);
+
+**ARROW FUNCTION**
+
+let result=(arr1,arr2)=>{
+let addArr = arr1.concat(arr2); 
+let sort=addArr.sort();
+let halfLength=sort.length/2;
+result=(sort[halfLength-1]+sort[halfLength])/2;
+console.log(result);
+}
+let a = [11, 21, 71, 51];
+let b = [41, 61, 19, 81];
+result(a,b);
+
+----------------------------------------------------------------------------------------------
+
+(G)Remove duplicates from an array
+
+Sample Input:
+[1,9,6,8,6,3,1]
+Sample Output:
+[1,9,6,8,3]
+
+**ANONYMOUS FUNCTION**
+
+let removeDuplicates = function (arr) {
+    const result = [];
+    for (const value of arr) {
+      if (!result.includes(value)) {
+        result.push(value);
+      }
+    }
+    return result;
+  }
+  
+  const arr = [1,9,6,8,6,3,1];
+  const resultArray = removeDuplicates(arr);
+  console.log(resultArray);
+
+**IIFE**
+
+function removeDuplicates(arr) {
+    const result = [];
+    for (const value of arr) {
+      if (!result.includes(value)) {
+        result.push(value);
+      }
+    }
+    return result;
+  }
+  
+  const arr = [1,9,6,8,6,3,1];
+  const resultArray = removeDuplicates(arr);
+  console.log(resultArray);
+
+**ARROW FUNCTION**
+
+ let removeDuplicates(arr)=> {
+    const result = [];
+    for (const value of arr) {
+      if (!result.includes(value)) {
+        result.push(value);
+      }
+    }
+    return result;
+  }
+  
+  const arr = [1,9,6,8,6,3,1];
+  const resultArray = removeDuplicates(arr);
+  console.log(resultArray);
+
+  ------------------------------------------------------------------------------------------------
+(H)Rotate an array by k times
+
+Sample Input:
+[1, 2, 3, 4, 5], 3
+Sample Output:
+[ 3, 4, 5, 1, 2 ]
+
+**ANONYMOUS FUNCTION**
+
+let rotateArray=function (arr, k) {
+    const n = arr.length;
+    k = k % n; 
+    const rotatedPart = arr.splice(n - k);
+    arr.unshift(...rotatedPart); 
+    return arr;
+  }
+  const arr = [1, 2, 3, 4, 5];
+  const rotate = 3; 
+  const result = rotateArray(arr, rotate);
+  console.log(result);
+
+**IIFE**
+
+function rotateArray(arr, k) {
+    const n = arr.length;
+    k = k % n; 
+    const rotatedPart = arr.splice(n - k);
+    arr.unshift(...rotatedPart); 
+    return arr;
+  }
+  const arr = [1, 2, 3, 4, 5];
+  const rotate = 3; 
+  const result = rotateArray(arr, rotate);
+  console.log(result);
+
+**ARROW FUNCTION**
+
+let rotateArray=(arr, k)=> {
+    const n = arr.length;
+    k = k % n; 
+    const rotatedPart = arr.splice(n - k);
+    arr.unshift(...rotatedPart); 
+    return arr;
+  }
+  const arr = [1, 2, 3, 4, 5];
+  const rotate = 3; 
+  const result = rotateArray(arr, rotate);
+  console.log(result);
+
+-----------------------------------------------------------------------------------------------
