@@ -1,0 +1,125 @@
+/*1)How to compare two JSON have the same properties without same order
+
+obj1={name:"person",age:5}
+
+obj2={age:5, name:"person"}*/
+
+let obj1={name:"person",age:5}
+let obj2={age:5, name:"person"}
+if((obj1.name==obj2.name)&&(obj1.age==obj2.age)){
+   console.log("true") 
+}
+else{
+    console.log("false")
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!--2)Use rest countries API url and display all country flags in the console-->
+
+<html>
+
+<head>
+    <title>XML HTTP Request Example</title>
+
+
+</head>
+
+<body>
+    This is for XML parsing
+
+    <script>
+        // Creating an XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Define the URL to which the request will be sent
+        const url = 'https://restcountries.com/v3.1/all'; // Replace with your API endpoint
+
+        // This function is called whenever the state of the XMLHttpRequest changes
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest.DONE means the operation is complete
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Check if the request was successful (status code 200)
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    const response = JSON.parse(xhr.responseText);
+                    // Call a function to display the data
+                    for(i=0;i<response.length;i++){
+                        for(i=0;i<response.length;i++){
+                        console.log(response[i].flags.png)
+                    }
+                }
+
+                } else {
+                    // Log an error message if the request fails
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+
+        // Open a connection with the server
+        xhr.open('GET', url, true); // Parameters: method, URL, asynchronous (true/false)
+
+        // Send the request
+        xhr.send(); // For POST requests, you can pass data as an argument to send()
+
+    </script>
+</body>
+
+</html>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!--3)Use the same rest countries API url and display all country names, regions, subregions, population.-->
+
+<html>
+
+<head>
+    <title>XML HTTP Request Example</title>
+   
+
+</head>
+
+<body>
+    This is for XML parsing
+
+    <script>
+        // Creating an XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Define the URL to which the request will be sent
+        const url = 'https://restcountries.com/v3.1/all'; // Replace with your API endpoint
+
+        // This function is called whenever the state of the XMLHttpRequest changes
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest.DONE means the operation is complete
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Check if the request was successful (status code 200)
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    const response = JSON.parse(xhr.responseText);
+                    // Call a function to display the data
+                    for(i=0;i<response.length;i++){
+                        console.log("COUNTRY-NAME: "+response[i].name.common)
+                        console.log("REGION: "+response[i].region)
+                        console.log("SUBREGION: "+response[i].subregion)
+                        console.log("POPULATION: "+response[i].population)
+                        
+                    }
+
+                } else {
+                    // Log an error message if the request fails
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+
+        // Open a connection with the server
+        xhr.open('GET', url, true); // Parameters: method, URL, asynchronous (true/false)
+
+        // Send the request
+        xhr.send(); // For POST requests, you can pass data as an argument to send()
+
+    </script>
+</body>
+
+</html>
+
+      
+  
