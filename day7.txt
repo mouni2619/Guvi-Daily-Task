@@ -1,0 +1,242 @@
+(a)Get all the countries from Asia continent /region using Filter function
+<html>
+<head>
+    <title>XML HTTP Request Example</title>
+</head>
+<body>
+    This is for XML parsing
+    <script>
+        // Creating an XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Define the URL to which the request will be sent
+        const url = 'https://restcountries.com/v3.1/all'; // Replace with your API endpoint
+
+        // This function is called whenever the state of the XMLHttpRequest changes
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest.DONE means the operation is complete
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Check if the request was successful (status code 200)
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    const response = JSON.parse(xhr.responseText);
+                    // Call a function to display the data   
+                response.filter((i)=>{
+                    if(i.continents=="Asia"){
+                        console.log(i.name.common)
+                    }
+                })
+
+                } else {
+                    // Log an error message if the request fails
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+
+        // Open a connection with the server
+        xhr.open('GET', url, true); // Parameters: method, URL, asynchronous (true/false)
+
+        // Send the request
+        xhr.send(); // For POST requests, you can pass data as an argument to send()
+
+    </script>
+</body>
+-----------------------------------------------------------------------------------------------------------------
+(b)Get all the countries with a population of less than 2 lakhs using Filter function
+<html>
+<head>
+    <title>XML HTTP Request Example</title>
+</head>
+<body>
+    This is for XML parsing
+    <script>
+        // Creating an XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Define the URL to which the request will be sent
+        const url = 'https://restcountries.com/v3.1/all'; // Replace with your API endpoint
+
+        // This function is called whenever the state of the XMLHttpRequest changes
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest.DONE means the operation is complete
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Check if the request was successful (status code 200)
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    const response = JSON.parse(xhr.responseText);
+                    // Call a function to display the data
+                    
+                response.filter((i)=>{
+                    if(i.population<200000){
+                        console.log("country: "+i.name.common)
+                        console.log("population: "+i.population)
+                        console.log(" ")
+                    }
+                })
+               
+
+                } else {
+                    // Log an error message if the request fails
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+
+        // Open a connection with the server
+        xhr.open('GET', url, true); // Parameters: method, URL, asynchronous (true/false)
+
+        // Send the request
+        xhr.send(); // For POST requests, you can pass data as an argument to send()
+
+    </script>
+</body>
+----------------------------------------------------------------------------------------------------------------
+(c)Print the following details name, capital, flag, using forEach function
+<html>
+<head>
+    <title>XML HTTP Request Example</title>
+</head>
+<body>
+    This is for XML parsing
+    <script>
+        // Creating an XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Define the URL to which the request will be sent
+        const url = 'https://restcountries.com/v3.1/all'; // Replace with your API endpoint
+
+        // This function is called whenever the state of the XMLHttpRequest changes
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest.DONE means the operation is complete
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Check if the request was successful (status code 200)
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    const response = JSON.parse(xhr.responseText);
+                    // Call a function to display the data
+                    
+                response.forEach((i)=>{
+                    console.log("NAME: "+i.name.common)
+                    console.log("CAPITAL: "+i.capital)
+                 
+                    console.log("FLAG: "+i.flag)
+                    console.log("    ")
+                })
+               
+
+                } else {
+                    // Log an error message if the request fails
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+
+        // Open a connection with the server
+        xhr.open('GET', url, true); // Parameters: method, URL, asynchronous (true/false)
+
+        // Send the request
+        xhr.send(); // For POST requests, you can pass data as an argument to send()
+
+    </script>
+</body>
+-----------------------------------------------------------------------------------------------------------------
+(d)Print the total population of countries using reduce function
+<html>
+<head>
+    <title>XML HTTP Request Example</title>
+</head>
+<body>
+    This is for XML parsing
+    <script>
+        // Creating an XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Define the URL to which the request will be sent
+        const url = 'https://restcountries.com/v3.1/all'; // Replace with your API endpoint
+
+        // This function is called whenever the state of the XMLHttpRequest changes
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest.DONE means the operation is complete
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Check if the request was successful (status code 200)
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    const response = JSON.parse(xhr.responseText);
+                    // Call a function to display the data
+                    let arr=[]
+                   response.forEach((i)=>{
+                  arr.push(i.population)
+                })
+
+                  let sum=arr.reduce((acc,curr)=>{
+                   return acc+curr;
+                
+                })
+                console.log("Total population of countries: ",sum)
+                } else {
+
+                    // Log an error message if the request fails
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+
+        // Open a connection with the server
+        xhr.open('GET', url, true); // Parameters: method, URL, asynchronous (true/false)
+
+        // Send the request
+        xhr.send(); // For POST requests, you can pass data as an argument to send()
+
+    </script>
+</body>
+                
+---------------------------------------------------------------------------------------------------------------------------
+(e)Print the country that uses US dollars as currency.
+<html>
+<head>
+    <title>XML HTTP Request Example</title>
+</head>
+<body>
+    This is for XML parsing
+    <script>
+        // Creating an XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Define the URL to which the request will be sent
+        const url = 'https://restcountries.com/v3.1/all'; // Replace with your API endpoint
+
+        // This function is called whenever the state of the XMLHttpRequest changes
+        xhr.onreadystatechange = function () {
+            // XMLHttpRequest.DONE means the operation is complete
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                // Check if the request was successful (status code 200)
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    const response = JSON.parse(xhr.responseText);
+                    // Call a function to display the data
+                    
+                response.forEach((i)=>{
+                    console.log("NAME: "+i.name.common)
+                    console.log("CAPITAL: "+i.capital)
+                 
+                    console.log("FLAG: "+i.flag)
+                    console.log("    ")
+                })
+               
+
+                } else {
+                    // Log an error message if the request fails
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+
+        // Open a connection with the server
+        xhr.open('GET', url, true); // Parameters: method, URL, asynchronous (true/false)
+
+        // Send the request
+        xhr.send(); // For POST requests, you can pass data as an argument to send()
+
+    </script>
+</body>
