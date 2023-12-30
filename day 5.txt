@@ -1,0 +1,115 @@
+(QUESTION 2)Create Your Own Resume Data in JSON Format.
+
+
+let resume = {
+    Name: "Mounika Adada",
+    ContactDetails: {
+        Email: "mounikaadada26@gmail.com",
+        PhoneNumber: 7816066286,
+        Address: {
+            Dno: "1-13",
+            Street: "happy homes",
+            City: "bhimavaram",
+            District: "west godavari",
+            State: "andhra pradesh"
+        }
+
+    },
+    CareerObjective: "To work with leading company and to use my analytical thinking to the best of my ability combined withperseverance, I want to be part of the success in an environment of growth and excellence.",
+    Education: [{ Qualification: "MBA(HumanResource)", College: "BIET", Percentage: 71, Passingyear: 2021 },
+    { Qualification: "B.SC(ComputerScience)", College: "Aditya Degree College", Percentage: 87, Passingyear: 2019 },
+    { Qualification: "Intermediate", College: "Aditya Junior College", Percentage: 71, Passingyear: 2016 },
+    { Qualification: "SSC", College: "Sri Chaitanya Techno School", Percentage: 85, Passingyear: 2014 }],
+    ITskills: ["HTML", "CSS", "JavaScript"],
+    Project: [{
+        Title: "Aarush Software Solution Interface",
+        Description: "This project is about to design an interface and online job portal for Aarush Software Solutions. Over the course of the project, I designed about company profile, its services, portal login and signup form and job portal page for users. Developed user-friendly interface for software company. Used HTML, CSS, and Bootstrap for coding and integration.",
+        URL: "https://adada3819.github.io/new-project/amaterasu.html"
+    }],
+    PersonalSkills: ["Good Communication Skills", "Quick Learner", "Time Management", "Problem Solving"],
+
+    PersonalProfile: {
+        FatherName: "Srinivas rao",
+        MaritalStatus: "Unmarried",
+        DateOfBirth: "1st March,1999",
+        LanguageKnown: "English & Telugu",
+        Nationality: "India"
+    },
+    Declaration: "I hereby declare that the above-mentioned details are true to the best of my knowledge."
+
+
+}
+console.log(resume)
+
+
+
+----------------------------------------------------------------------------------------------------------------
+(QUESTION 1)Based on above JSON iterate over all for loops(for,for in, for of, forEach)
+
+
+******use (for loop) to print all ITskills from resume******
+
+for(i=0;i<resume.ITskills.length;i++){
+    console.log(resume.ITskills[i])
+}
+
+//output://
+HTML
+CSS
+JavaScript
+
+******use (for in loop) and i need to get complete address from resume******
+
+for(let x in resume.ContactDetails.Address){
+console.log(resume.ContactDetails.Address[x])
+}
+
+//output://
+1-13
+happy homes
+bhimavaram
+west godavari
+andhra pradesh
+
+******use for of loop and i need to get projrct title from resume******
+
+let output=""
+for(let x of resume.Project[0].Title){
+  output+=x
+}
+console.log(output)
+
+//output : //
+Aarush Software Solution Interface
+
+
+******use forEach loop and print details about education******
+resume.Education.forEach((element)=> {
+    console.log(element)
+})
+
+//output://
+{
+  Qualification: 'MBA(HumanResource)',
+  College: 'BIET',
+  Percentage: 71,
+  Passingyear: 2021
+}
+{
+  Qualification: 'B.SC(ComputerScience)',
+  College: 'Aditya Degree College',
+  Percentage: 87,
+  Passingyear: 2019
+}
+{
+  Qualification: 'Intermediate',
+  College: 'Aditya Junior College',
+  Percentage: 71,
+  Passingyear: 2016
+}
+{
+  Qualification: 'SSC',
+  College: 'Sri Chaitanya Techno School',
+  Percentage: 85,
+  Passingyear: 2014
+}
