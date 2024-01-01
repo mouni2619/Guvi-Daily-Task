@@ -130,12 +130,30 @@ console.log(details)
 details.f()
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 (4)WRITE A CLASS TO CALUCLATE THE UBER PRICE
-function caluclatetheUberPrice(){
-    const basefare=2.50;
-    const costperkm=1.50;
-    const totalfare=basefare+costperkm*distance
-    return totalfare;
 
+class UberPriceCalculator {
+
+    constructor(baseCost, perKmCost, perMinuteCost) {
+        this.baseCost = baseCost;
+        this.perKmCost = perKmCost;
+        this.perMinuteCost = perMinuteCost;
+    }
+    calculateFare(distanceInKm, timeInMinutes) {
+        const fare = this.baseCost + (distanceInKm * this.perKmCost) + (timeInMinutes * this.perMinuteCost);
+        return fare;
+    }
+    displayFare(distanceInKm, timeInMinutes) {
+        const fare = this.calculateFare(distanceInKm, timeInMinutes);
+        console.log(`Uber price Estimate:\nBase price: ${this.baseCost.toFixed(2)}Rs\nDistance price: ${(distanceInKm * this.perKmCost).toFixed(2)}Rs\nTime price: ${(timeInMinutes * this.perMinuteCost).toFixed(2)}Rs\nTotal price: ${fare.toFixed(2)}Rs`);
+    }
 }
-const distance=100;
-console.log(caluclatetheUberPrice(distance))
+
+const uberCalculator = new UberPriceCalculator(4, 3, 1); 
+uberCalculator.displayFare(6, 30);  
+
+OUTPUT:
+Uber price Estimate:
+Base price: 4.00Rs
+Distance price: 18.00Rs
+Time price: 30.00Rs
+Total price: 52.00Rs
