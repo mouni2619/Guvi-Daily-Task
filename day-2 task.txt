@@ -1,0 +1,52 @@
+Difference between document and window objects?
+
+
+window Object:
+1.Global Object:
+The window object is the global object in a browser environment. In a browser, global variables and functions are attached to the window object.
+2.Global Scope:
+Variables declared without the var, let, or const keyword become properties of the window object.
+3.Browser Context:
+Represents the browser window or tab. It provides access to the browser's features, such as the location (URL), history, and methods like alert().
+4.Timers:
+Handles timers and intervals using functions like setTimeout() and setInterval().
+5.Browser Information:
+Contains information about the browser environment, such as navigator for browser information and screen for screen dimensions.
+
+Document Object:
+1.DOM Representation:
+The document object represents the HTML document loaded in the browser.
+2.Document Structure:
+Provides access to the structure and content of the document, allowing manipulation of elements, attributes, and text content.
+3.DOM Methods:
+Contains methods to interact with the Document Object Model (DOM), such as getElementById(), getElementsByClassName(), and querySelector().
+4.Events:
+Manages events within the document, allowing you to attach event listeners and respond to user actions.
+5.Forms and Controls:
+Handles HTML forms and form controls, allowing access to form elements and their properties.
+
+Relationship between window and document:
+
+Document:
+1.It represents the document loaded inside the window or browser.
+2.The properties related to it are stored in the document object.
+3.It is loaded after the loading window because the window contains a document.
+4.It is the root element of the document object model.
+5.It is an object of window.
+6.We can not access windows objects properties inside the document.
+7."logically:
+document:{ properties}"
+8.Example: document.title will return the title of the document
+
+Window:
+1.It represents the browser window in which you are seeing the content.
+2.The properties related to it are stored in the window object.
+3.It is loaded before the document because window container document.
+4.The window is the global element for all objects, functions, etc.
+5.It is an object of the browser.
+6.We can access document object properties inside the window.
+7."logically:
+ window:{
+ document:{properties}
+ }"
+8.Example: window.document.title will return the title of the document.
