@@ -1,0 +1,74 @@
+.lastbutton{
+    width: 70px;  
+    font-size: 10px;
+    background-color: rgb(66, 119, 240);
+    
+}
+
+
+
+
+.imageBorder{
+    border: 2px solid black;
+    margin-bottom: 8px;
+    padding: 10px 10px;
+    height: 100px;
+    width:200px ;
+  
+   
+    
+}
+.seats{
+    padding: 5px;
+}
+.para{
+    font-size: 10px;
+}
+.containerClass{
+    border: 5px solid black;
+  padding: 50px;
+
+}
+.mainheading{
+    border: 2px solid black;
+    
+    padding: 5px 100px;
+    
+   
+}
+.mainheading1{
+    margin-bottom: 50px;
+    
+     
+   
+    
+
+}
+.event1{
+
+  margin: 10px;
+}
+.mainhead{
+    font-size: 50px;
+    border: 2px solid ;
+    margin-left: 350px;
+   padding: 1px 90px;
+
+    
+}
+.containerhead{
+   
+    width: 70vw;
+   
+    border:2px solid ;
+
+}
+.imgnew{
+    border: 1px solid black;
+    height: 60px;
+    width: 60px;
+    border-radius: 500px ;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
